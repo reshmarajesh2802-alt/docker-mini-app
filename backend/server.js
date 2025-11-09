@@ -15,8 +15,9 @@ mongoose.connect(process.env.MONGO_URL, {
 .then(() => console.log("Connected to MongoDB"))
 .catch(err => console.error(" MongoDB error:", err));
 
-app.get('/api/hello', (req, res) => {
-  res.json({ message: "Hello from backend!" });
+app.get("/", (req, res) => {
+  res.status(200).send("Hey, the backend server is running!");
 });
+
 
 app.listen(5000, () => console.log(" Backend running on port 5000"));
