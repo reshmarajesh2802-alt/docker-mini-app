@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 
 function App() {
-  const [message, setMessage] = useState("");
+  const [setMessage, setMessage] = useState("");
 
   useEffect(() => {
   fetch('https://docker-mini-backend-jmvp.onrender.com') // <-- This is the line to change
     .then(res => res.json())
-    .then(text => setBackendMessage(text))
+
+    .then(text => setMessage(text)) 
+
     .catch(err => console.error(err));
 }, []);
 
