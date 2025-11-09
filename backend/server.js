@@ -15,8 +15,9 @@ mongoose.connect(process.env.MONGO_URL, {
 .then(() => console.log("Connected to MongoDB"))
 .catch(err => console.error(" MongoDB error:", err));
 
+// Add a simple GET route for the root URL
 app.get("/", (req, res) => {
-  res.status(200).send("Hey, the backend server is running!");
+  res.status(200).send("Backend server is running!");
 });
 
 
