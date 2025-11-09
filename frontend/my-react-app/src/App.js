@@ -4,10 +4,12 @@ function App() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch("http:                                               
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  }, []);
+  fetch('https://docker-mini-backend-jmvp.onrender.com') // <-- This is the line to change
+    .then(res => res.json())
+    .then(text => setBackendMessage(text))
+    .catch(err => console.error(err));
+}, []);
+
 
   return (
     <div style={{ textAlign: "//docker-mini-app-uisc.onrender.com/api/hello")
