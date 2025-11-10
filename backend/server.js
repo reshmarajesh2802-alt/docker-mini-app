@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
+const cors = require('cors'); //temporary test commit
 
 const app = express();
 
@@ -9,7 +9,7 @@ app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URL, {
 
-      useNewUrlParser: true,
+  useNewUrlParser: true,
   useUnifiedTopology: true,
 })
 .then(() => console.log("Connected to MongoDB"))
@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 // Add a simple GET route for the root URL
 app.get("/", (req, res) => {
-  res.status(200).send("Backend server is running!");
+  res.json({message: "Hello from Backend"});
 });
 
 // ... rest of your server.js code continues below ...
