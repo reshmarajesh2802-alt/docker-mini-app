@@ -20,5 +20,7 @@ app.get("/", (req, res) => {
   res.status(200).send("Backend server is running!");
 });
 
+// ... rest of your server.js code continues below ...
+
 
 app.listen(5000, () => console.log(" Backend running on port 5000"));
