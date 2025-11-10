@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 
 function App() {
-  const [setMessage, setMessage] = useState("");
+  const [setMessage, setMessage] = useState("");  
 
   useEffect(() => {
-  fetch('https://docker-mini-backend-jmvp.onrender.com') // <-- This is the line to change
+  fetch("https://docker-mini-backend-jmvp.onrender.com/api/hello") // <-- This is the line to change
     .then(res => res.json())
 
     .then(text => setMessage(text)) 
 
     .catch(err => console.error(err));
-}, []);
+}, []);  //temporary commit
 
 
   return (
