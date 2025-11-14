@@ -14,6 +14,9 @@ mongoose.connect(process.env.MONGO_URL, {
 })
 .then(() => console.log("Connected to MongoDB"))
 .catch(err => console.error(" MongoDB error:", err));
+app.use(cors({
+  origin: "https://docker-mini-backend-jmvp.onrender.com",
+}));
 
 // Add a simple GET route for the root URL
 app.get("/", (req, res) => {
@@ -23,4 +26,7 @@ app.get("/", (req, res) => {
 // ... rest of your server.js code continues below ...
 
 
-app.listen(5000, () => console.log(" Backend running on port 5000"));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, "0.0.0.0", () => {
+  console.log("Server running on port " + PORT);
+});
